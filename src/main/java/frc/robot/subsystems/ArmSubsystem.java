@@ -26,9 +26,21 @@ public class ArmSubsystem extends SubsystemBase {
 
   public void arm_up() {
 
-    Arm_Motor_1.set(Constants.Arm_Speed_Max);
+   Arm_Motor_1.set(Constants.Arm_Speed_Max);
     Arm_Motor_2.set(Constants.Arm_Speed_Max*-1);
     
     
      }
+
+public void Arm_Speed(double speed){
+  Arm_Motor_1.set(speed);
+  Arm_Motor_2.set(speed*-1);
+}
+
+
+
+
+
+
+
 }
