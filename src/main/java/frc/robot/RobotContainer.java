@@ -12,6 +12,7 @@ import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import frc.robot.subsystems.airmodsubsystem;
+import frc.robot.subsystems.intakesubsystem;
 import pabeles.concurrency.ConcurrencyOps.NewInstance;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
@@ -37,6 +38,7 @@ private final DriveTrain Drive = new DriveTrain();
 
 private final ArmSubsystem Arm = new ArmSubsystem();
 private final airmodsubsystem air = new airmodsubsystem();
+private final intakesubsystem intake = new intakesubsystem();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -44,6 +46,10 @@ private final airmodsubsystem air = new airmodsubsystem();
 air.start();
 
     Drive.drive(Leftstick.getRawAxis(0), Rightstick.getRawAxis(0));
+
+Arm.Arm_Speed(Rightstick2.getRawAxis(0));
+
+
     // Configure the button bindings
     configureButtonBindings();
   }
@@ -91,7 +97,15 @@ new JoystickButton(Rightstick, 1)
 ));
 
 
+new JoystickButton(Leftstick, 0)
+.onTrue(new InstantCommand(
+  () -> intake.Intake_In()
+));
 
+new JoystickButton(Rightstick, 0)
+.onTrue(new InstantCommand(
+  () -> intake.Intake_out()
+));
 
 
 
