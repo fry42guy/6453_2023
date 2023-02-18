@@ -14,30 +14,30 @@ package frc.robot;
  */
 public final class Constants {
 
-public final int FL_Drive_ID = 30;
-public final int FR_Drive_ID = 31;
-public final int RL_Drive_ID = 32;
-public final int RR_Drive_ID = 33;
-public final double Drive_Speed_Max = 1.0;
+public final static int FL_Drive_ID = 30;
+public final static int FR_Drive_ID = 31;
+public final static int RL_Drive_ID = 32;
+public final static int RR_Drive_ID = 33;
+public final static double Drive_Speed_Max = 1.0;
 
-public final int Intake_Right_ID = 40;
-public final int Intake_Left_ID = 41;
-public final double Intake_speed_Limit = 1.0; 
+public final static int Intake_Right_ID = 40;
+public final static int Intake_Left_ID = 41;
+public final static double Intake_speed_Limit = 1.0; 
 
-public final int Spark_Arm_1_ID = 50;
-public final int Spark_Arm_2_ID = 51;
-public final double Arm_Speed_Max = .5;
+public final static int Spark_Arm_1_ID = 50;
+public final static int Spark_Arm_2_ID = 51;
+public final static double Arm_Speed_Max = .5;
 
-public final int PCM_ID = 1;
+public final static int PCM_ID = 1;
 
-public final int Pivot_Open = 1; 
-public final int Pivot_Close = 2; 
+public final static int Pivot_Open = 1; 
+public final static int Pivot_Close = 2; 
 
-public final int Vertical_up = 3; 
-public final int Vertical_down = 4; 
+public final static int Vertical_up = 3; 
+public final static int Vertical_down = 4; 
 
-public final int Clawn_Open = 5; 
-public final int Clawn_Close = 6; 
+public final static int Clawn_Open = 5; 
+public final static int Clawn_Close = 6; 
 
 
 
