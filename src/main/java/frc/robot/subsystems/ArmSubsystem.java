@@ -15,10 +15,20 @@ public class ArmSubsystem extends SubsystemBase {
  private final Spark Arm_Motor_2 = new Spark(Constants.Spark_Arm_2_ID);
  
  
+
   public ArmSubsystem() {}
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
   }
+
+
+  public void arm_up() {
+
+    Arm_Motor_1.set(Constants.Arm_Speed_Max);
+    Arm_Motor_2.set(Constants.Arm_Speed_Max*-1);
+    
+    
+     }
 }
