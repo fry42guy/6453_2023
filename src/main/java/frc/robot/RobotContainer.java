@@ -11,7 +11,11 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.airmodsubsystem;
+import pabeles.concurrency.ConcurrencyOps.NewInstance;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.InstantCommand;
+import edu.wpi.first.wpilibj2.command.button.JoystickButton;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -32,10 +36,13 @@ private final Joystick Rightstick2 = new Joystick(2);
 private final DriveTrain Drive = new DriveTrain();
 
 private final ArmSubsystem Arm = new ArmSubsystem();
-
+private final airmodsubsystem air = new airmodsubsystem();
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
+
+air.start();
+
     Drive.drive(Leftstick.getRawAxis(0), Rightstick.getRawAxis(0));
     // Configure the button bindings
     configureButtonBindings();
@@ -47,7 +54,49 @@ private final ArmSubsystem Arm = new ArmSubsystem();
    * edu.wpi.first.wpilibj.Joystick} or {@link XboxController}), and then passing it to a {@link
    * edu.wpi.first.wpilibj2.command.button.JoystickButton}.
    */
-  private void configureButtonBindings() {}
+  private void configureButtonBindings() {
+
+
+new JoystickButton(Leftstick, 5)
+.onTrue(new InstantCommand(
+  () -> air.Clawn_Close()
+));
+
+new JoystickButton(Leftstick, 7)
+.onTrue(new InstantCommand(
+  () -> air.Clawn_Open()
+));
+
+
+new JoystickButton(Rightstick2, 0)
+.onTrue(new InstantCommand(
+  () -> air.pivot_open()
+));
+
+new JoystickButton(Rightstick2, 1)
+.onTrue(new InstantCommand(
+  () -> air.pivot_close()
+));
+
+
+
+new JoystickButton(Rightstick, 0)
+.onTrue(new InstantCommand(
+  () -> air.vertical_up()
+));
+
+new JoystickButton(Rightstick, 1)
+.onTrue(new InstantCommand(
+  () -> air.Vertical_down()
+));
+
+
+
+
+
+
+
+  }
 
   /**
    * Use this to pass the autonomous command to the main {@link Robot} class.
