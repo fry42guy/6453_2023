@@ -8,6 +8,7 @@ import edu.wpi.first.wpilibj.GenericHID;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.XboxController;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.DriveTrain;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -30,7 +31,7 @@ private final Joystick Rightstick2 = new Joystick(2);
 
 private final DriveTrain Drive = new DriveTrain();
 
-
+private final ArmSubsystem Arm = new ArmSubsystem();
 
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
